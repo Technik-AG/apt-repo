@@ -14,7 +14,7 @@ cache:
     - "$HOME/.gradle/wrapper/"
 
 before_install:
-  - openssl aes-256-cbc -K $encrypted_bd6b35ae4a6c_key -iv $encrypted_bd6b35ae4a6c_iv -in keyring.gpg.enc -out keyring.gpg
+  - openssl aes-256-cbc -K $encrypted_deb776baad2b_key -iv $encrypted_deb776baad2b_iv -in keyring.gpg.enc -out keyring.gpg -d
 
 deploy:
   provider: pages
