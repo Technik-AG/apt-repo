@@ -1,0 +1,10 @@
+apply plugin: 'me.jartreg.download-github-release'
+
+task downloadPackage(type: DownloadGitHubRelease) {
+    repository = 'Technik-AG/router-configuration'
+    tagName = 'v1.0'
+}
+
+task getPackage(dependsOn: downloadPackage) {
+    outputs.files downloadPackage.computedDestination.listFiles()
+}

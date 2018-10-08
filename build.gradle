@@ -1,0 +1,44 @@
+buildscript {
+    repositories {
+        maven { url 'https://jitpack.io' }
+    }
+
+    dependencies {
+        // For subprojects
+        classpath 'com.github.Jartreg.gradle-download-github-release:gradle-download-github-release:master'
+
+        classpath 'com.github.Jartreg.gradle-apt-repo:gradle-apt-repo:master'
+    }
+}
+
+plugins {
+    id 'base'
+}
+
+apply plugin: 'me.jartreg.apt-repo'
+
+task aptRepo(type: AptRepository) {
+    distribution('stable') {
+        component('main') {
+            subprojects {
+                include tasks.getByPath(":${name}:getPackage")
+            }
+        }
+    }
+
+    signing {
+        keyRingFile = 'keyring.gpg'
+        keyId = System.env.SIGNING_KEY_ID
+        passphrase = System.env.SIGNING_PASSPHRASE
+    }
+}
+assemble.dependsOn aptRepo
+
+task copyRepoPackage(type: Copy) {
+    mustRunAfter aptRepo
+    
+    from tasks.getByPath(':packages/t-ag-apt-repository:getPackage')
+    rename { 'repo.deb' }
+    into "${buildDir}/apt-repository"
+}
+assemble.dependsOn copyRepoPackage

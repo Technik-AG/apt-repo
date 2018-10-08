@@ -1,0 +1,26 @@
+plugins {
+    id 'nebula.ospackage' version '4.10.0'
+}
+
+task buildPackage(type: Deb) {
+    packageName = 't-ag-apt-repository'
+    description = 'Die Technik-AG APT-Repository'
+    maintainer = 'Technik-AG'
+    version = '1.0'
+    release = '1'
+
+    from('./technik-ag.list') {
+        into '/etc/apt/sources.list.d'
+    }
+
+    from('./technik-ag.gpg') {
+        into '/etc/apt/trusted.gpg.d'
+    }
+}
+
+task('getPackage') {
+    dependsOn 'buildPackage'
+    outputs.files files(buildPackage).filter {
+        it.name.endsWith(".deb")
+    }
+}
