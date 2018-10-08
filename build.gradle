@@ -17,6 +17,11 @@ plugins {
 
 apply plugin: 'me.jartreg.apt-repo'
 
+// Apply the base plugin to all subprojects
+subprojects {
+    apply plugin: 'base'
+}
+
 task aptRepo(type: AptRepository) {
     distribution('stable') {
         component('main') {
