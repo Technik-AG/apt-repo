@@ -1,4 +1,7 @@
 language: java
+branches:
+  only:
+    - deploy
 
 install: true
 script: "./gradlew build"
