@@ -1,1 +1,1 @@
-deb http://192.168.2.113:8080/ stable main
+deb https://technik-ag.github.io/apt-repo/ stable main
