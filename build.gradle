@@ -47,3 +47,9 @@ task copyRepoPackage(type: Copy) {
     into "${buildDir}/apt-repository"
 }
 assemble.dependsOn copyRepoPackage
+
+task copyReadme(type: Copy) {
+    from 'README.md'
+    into "${buildDir}/apt-repository"
+}
+assemble.dependsOn copyReadme
