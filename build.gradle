@@ -5,9 +5,9 @@ buildscript {
 
     dependencies {
         // For subprojects
-        classpath 'com.github.Jartreg.gradle-download-github-release:gradle-download-github-release:master'
+        classpath 'com.github.Jartreg.gradle-download-github-release:gradle-download-github-release:master-SNAPSHOT'
 
-        classpath 'com.github.Jartreg.gradle-apt-repo:gradle-apt-repo:master'
+        classpath 'com.github.Jartreg.gradle-apt-repo:gradle-apt-repo:master-SNAPSHOT'
     }
 }
 
