@@ -30,7 +30,7 @@ task aptRepo(type: AptRepository) {
                     return;
 
                 include tasks.getByPath("${path}:getPackage").outputs.files.filter {
-                    it.isFile()
+                    it.isFile() && it.name.endsWith(".deb")
                 }
             }
         }

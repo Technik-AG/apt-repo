@@ -20,7 +20,5 @@ task buildPackage(type: Deb) {
 
 task('getPackage') {
     dependsOn 'buildPackage'
-    outputs.files files(buildPackage).filter {
-        it.name.endsWith(".deb")
-    }
+    outputs.files files(buildPackage)
 }
