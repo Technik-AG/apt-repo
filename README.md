@@ -6,8 +6,8 @@ Eine APT-Repository für Pakete der Technik-AG
 
 ## Inhalt
 
-* [`t-ag-router-configuration`](https://github.com/Technik-AG/router-configuration)
 * [`wifi-autoconnect`](https://github.com/Technik-AG/wifi-autoconnect)
+* [Alle Pakete aus `configuration-packages`](https://github.com/Technik-AG/configuration-packages)
 
 ## Installation
 
