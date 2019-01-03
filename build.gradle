@@ -24,6 +24,9 @@ subprojects {
 
 task aptRepo(type: AptRepository) {
     distribution('stable') {
+        origin = "Technik-AG"
+        description = "Die APT-Repository der Technik-AG"
+
         component('main') {
             subprojects {
                 if(!path.startsWith(":packages:"))
