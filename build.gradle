@@ -47,7 +47,9 @@ assemble.dependsOn aptRepo
 task copyRepoPackage(type: Copy) {
     mustRunAfter aptRepo
     
-    from tasks.getByPath(':packages:t-ag-apt-repository:getPackage')
+    from tasks.getByPath(':packages:t-ag-apt-repository:getPackage').outputs.files.filter {
+        it.name.endsWith(".deb")
+    }
     rename { 'repo.deb' }
     into "${buildDir}/apt-repository"
 }
