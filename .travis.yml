@@ -6,7 +6,7 @@ branches:
 install: true
 script: "./gradlew build --stacktrace"
 jdk:
-  - oraclejdk10
+  - openjdk10
 
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
