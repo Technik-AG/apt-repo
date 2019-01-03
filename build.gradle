@@ -26,8 +26,11 @@ task aptRepo(type: AptRepository) {
     distribution('stable') {
         component('main') {
             subprojects {
-                include tasks.getByPath(":${name}:getPackage").outputs.files.filter {
-                    it.isFile()
+                if(!path.startsWith(":packages:"))
+                    return;
+
+                include tasks.getByPath("${path}:getPackage").outputs.files.filter {
+                    it.isFile() && it.name.endsWith(".deb")
                 }
             }
         }
@@ -44,7 +47,7 @@ assemble.dependsOn aptRepo
 task copyRepoPackage(type: Copy) {
     mustRunAfter aptRepo
     
-    from tasks.getByPath(':packages/t-ag-apt-repository:getPackage')
+    from tasks.getByPath(':packages:t-ag-apt-repository:getPackage')
     rename { 'repo.deb' }
     into "${buildDir}/apt-repository"
 }

@@ -1,3 +1,8 @@
 file('packages').eachDir {
-    include "packages/$it.name"
+    include "packages:$it.name"
+}
+
+file('configuration-packages/packages').eachDir {
+    include "packages:$it.name"
+    project(":packages:$it.name").projectDir = file("configuration-packages/packages/$it.name")
 }
