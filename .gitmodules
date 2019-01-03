@@ -1,0 +1,3 @@
+[submodule "configuration-packages"]
+	path = configuration-packages
+	url = https://github.com/Technik-AG/configuration-packages.git
