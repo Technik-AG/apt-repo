@@ -6,7 +6,7 @@ task buildPackage(type: Deb) {
     packageName = 't-ag-apt-repository'
     description = 'Die Technik-AG APT-Repository'
     maintainer = 'Technik-AG'
-    version = '1.0'
+    version = '1.0.1'
     release = '1'
 
     requires("apt-transport-https")
