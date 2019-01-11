@@ -8,6 +8,7 @@ task buildPackage(type: Deb) {
     maintainer = 'Technik-AG'
     version = '1.0.1'
     release = '1'
+    user = 'root'
 
     requires("apt-transport-https")
 
