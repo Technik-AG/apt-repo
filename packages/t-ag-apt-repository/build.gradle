@@ -9,6 +9,8 @@ task buildPackage(type: Deb) {
     version = '1.0'
     release = '1'
 
+    requires("apt-transport-https")
+
     from('./technik-ag.list') {
         into '/etc/apt/sources.list.d'
     }
