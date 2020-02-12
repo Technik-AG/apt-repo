@@ -1,0 +1,19 @@
+
+Origin: Technik-AG
+Suite: stable
+Date: Wed, 12 Feb 2020 18:07:33 GMT
+Architectures: all
+Components: main
+Description: Die APT-Repository der Technik-AG
+MD5Sum:
+ 71dd3231df7cb5ac8928e05b52c6d81e 2752 main/binary-all/Packages.xz
+ a8d0d42527a2c25f0b998e89264a34cc 7199 main/binary-all/Packages
+SHA1:
+ ffac4c51f7e33875899c833b45428ba287f5147d 2752 main/binary-all/Packages.xz
+ fbaa3eb5cd95d3e672a514663bb7f17889f79604 7199 main/binary-all/Packages
+SHA256:
+ cd2705a203ce41287e3065c49e919ff8e5d65a28ee5fac209047259e084d02c1 2752 main/binary-all/Packages.xz
+ 7cac5ef54cd0cb5461a68e10a7484149604479df0e315a97690b38c6caab7dab 7199 main/binary-all/Packages
+SHA512:
+ 6d0a0e8b0e89f4c425eeb83ec37d5da264bf0b746eb041ab8ba46ca7cb601bfe7b184337be6267a8c26894acd6458d95046a7801333d0b77128f5e87297f4475 2752 main/binary-all/Packages.xz
+ 3bd9cbe615106c49831c58aa1a28e3ae5b777c5b3a0c967d4386c80cfd5666b811b3daf65d747b10350258fece9b26afd89a278fb798edbae91129764ce8581f 7199 main/binary-all/Packages
